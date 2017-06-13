@@ -11,11 +11,16 @@ import React from 'react'
 
 export default function TodoForm(props){
   return (
-    <form>
+    <form onSubmit={props.onFormSubmit}>
       <input type="text"
         value={props.currentTodo}
         onChange={props.handleInputChange}>
       </input>
     </form>
   );
+}
+
+TodoForm.propTypes = {
+  currentTodo: React.PropTypes.string.isRequired,
+  handleInputChange: React.PropTypes.func.isRequired
 }
